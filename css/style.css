@@ -84,6 +84,22 @@ button {
 .nav-link:focus {
   color: #404bbf;
 }
+.current {
+  position: relative;
+  color: #404bbf;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.current::after {
+  content: "";
+  position: absolute;
+  background-color: #404bbf;
+  border-radius: 2px;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: -1px;
+}
 .address {
   font-style: normal;
   margin-left: auto;
@@ -97,6 +113,7 @@ button {
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .address-link:hover,
 .address-link:focus {
@@ -106,7 +123,18 @@ button {
   background: #2e2f42;
   padding-top: 188px;
   padding-bottom: 188px;
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/main-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  max-width: 1440px;
+  margin: 0 auto;
 }
+
 .main-title {
   font-weight: 700;
   font-size: 56px;
@@ -163,6 +191,22 @@ button {
 
 .goals-item {
   width: calc((100% - 3 * 24px) / 4);
+}
+.goals-icon {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  width: 264px;
+  height: 112px;
+  background-color: #f4f4fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.goals-icon-item {
+  display: flex;
+  color: #fff;
+  fill: transparent;
 }
 .goal-title {
   font-weight: 500;
@@ -224,7 +268,44 @@ button {
   letter-spacing: 0.02em;
   text-align: center;
   color: #434455;
+  margin-bottom: 8px;
 }
+.team-list-icon {
+  display: flex;
+  gap: 24px;
+  height: 40px;
+  justify-content: center;
+}
+
+.team-list-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-link {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: #4d5ae5;
+  border-radius: 50%;
+  position: relative;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-link:hover,
+.team-link:focus {
+  background-color: #404bbf;
+}
+
+.team-icon {
+  fill: #f4f4fd;
+  position: absolute;
+}
+
 .portfolio {
   padding-top: 120px;
   padding-bottom: 120px;
@@ -245,16 +326,39 @@ button {
   column-gap: 24px;
   row-gap: 48px;
 }
-.portfolio-wrap {
+/* .portfolio-wrap {
   width: 1158px;
   display: flex;
   flex-wrap: wrap;
   gap: 24px 48px;
-}
+} */
 .portfolio-item {
   width: calc((100% - 48px) / 3);
 }
 .portfolio-image {
+}
+.portfolio-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio-cover-text {
+  position: absolute;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  top: 0;
+  height: 100%;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 40px;
+  padding-bottom: 164px;
+  transform: translateY(100%);
+  background: #4d5ae5;
+}
+.portfolio-item:hover .portfolio-cover-text {
+  transform: translateY(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-why {
   padding: 32px 16px;
