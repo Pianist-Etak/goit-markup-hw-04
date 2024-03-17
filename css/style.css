@@ -392,17 +392,18 @@ button {
   background: #2e2f42;
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.footter-box {
   display: flex;
   align-items: baseline;
 }
 
-.footter-box {
-  margin-right: 120px;
-}
-
 .footer-box-list {
 }
-
+.footer-logo {
+  margin-right: 120px;
+}
 .footer .logo {
   display: inline-block;
   margin-bottom: 16px;
